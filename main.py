@@ -3,7 +3,8 @@ import sys
 
 from github import Github, GithubException
 
-from leetcode import LeetCodeClient, LeetCodeQuestion
+from leetcode_client import LeetCodeClient
+from leetcode_problem import LeetCodeProblem
 
 GITHUB_TOKEN = os.getenv("INPUT_GITHUB_TOKEN")
 REPOSITORY = os.getenv("INPUT_REPOSITORY")
@@ -23,13 +24,10 @@ if __name__ == '__main__':
     if not BRANCH:
         print("Empty BRANCH")
         sys.exit(1)
-    if not USER:
-        print("Empty USER")
-        sys.exit(1)
 
-    g = Github(GITHUB_TOKEN)
+    github = Github(GITHUB_TOKEN)
     try:
-        repo = g.get_repo(REPOSITORY)
+        repo = github.get_repo(REPOSITORY)
     except GithubException:
         print(
             "Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token,"
@@ -39,7 +37,7 @@ if __name__ == '__main__':
     question_of_today = lc_client.question_of_today()
     question_data = lc_client.question_data(question_of_today.title_slug)
     question_of_today.set_code_snippet(
-        LeetCodeQuestion.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
+        LeetCodeProblem.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
 
     print(f'Sync question: {question_of_today.to_json()}')
 
@@ -50,7 +48,6 @@ if __name__ == '__main__':
             repo.get_contents(file.path, BRANCH)
             print(f"{file.path} exists")
         except Exception as e:
-            # FIXME: Try not to use try-catch to control own business
             print(e)
             print(f"{file.path} does not exist or something wrong because other cause")
             to_create_files.append(file)
@@ -64,3 +61,5 @@ if __name__ == '__main__':
         except Exception as e:
             print(e)
             print(f'Current file: {file}')
+
+

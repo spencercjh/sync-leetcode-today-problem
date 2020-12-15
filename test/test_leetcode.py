@@ -1,14 +1,8 @@
-from leetcode import LeetCodeClient, LeetCodeQuestion, NameUtil
+from leetcode_client import LeetCodeClient
+from leetcode_problem import LeetCodeProblem, NameUtil
 
 LANGUAGE = 'Java'
 client = LeetCodeClient(LANGUAGE, 'spencercjh')
-
-
-def test_kebab_case_to_upper_camel_case():
-    assert 'TwoSum' == NameUtil.kebab_case_to_upper_camel_case('two-sum')
-    assert '' == NameUtil.kebab_case_to_upper_camel_case('')
-    # noinspection PyTypeChecker
-    assert '' == NameUtil.kebab_case_to_upper_camel_case(None)
 
 
 def test_kebab_case_to_camel_sentence():
@@ -46,7 +40,7 @@ def test_whole_scenario():
     assert client.csrf_token
     question_data = client.question_data(question_of_today.title_slug)
     question_of_today.set_code_snippet(
-        LeetCodeQuestion.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
+        LeetCodeProblem.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
 
     assert question_of_today.id
     assert question_of_today.title_slug
