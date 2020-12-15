@@ -14,7 +14,8 @@ LANGUAGE = os.getenv("INPUT_LANGUAGE", 'Java')
 
 lc_client = LeetCodeClient(LANGUAGE, USER)
 
-if __name__ == '__main__':
+
+def check_env():
     if not GITHUB_TOKEN:
         print('Empty github token')
         sys.exit(1)
@@ -25,21 +26,33 @@ if __name__ == '__main__':
         print("Empty BRANCH")
         sys.exit(1)
 
+
+def get_github_repo():
     github = Github(GITHUB_TOKEN)
     try:
-        repo = github.get_repo(REPOSITORY)
+        return github.get_repo(REPOSITORY)
     except GithubException:
         print(
             "Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token,"
             " which is automatically used by the action.")
         sys.exit(1)
 
-    question_of_today = lc_client.question_of_today()
-    question_data = lc_client.question_data(question_of_today.title_slug)
-    question_of_today.set_code_snippet(
-        LeetCodeProblem.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
 
-    print(f'Sync question: {question_of_today.to_json()}')
+def get_question_of_today():
+    _question_of_today = lc_client.question_of_today()
+    question_data = lc_client.question_data(_question_of_today.title_slug)
+    _question_of_today.set_code_snippet(
+        LeetCodeProblem.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
+    print(f'Sync question: {_question_of_today.to_json()}')
+    return _question_of_today
+
+
+if __name__ == '__main__':
+    check_env()
+
+    repo = get_github_repo()
+
+    question_of_today = get_question_of_today()
 
     print("Checking existence======================================================================")
     to_create_files = []
@@ -61,5 +74,3 @@ if __name__ == '__main__':
         except Exception as e:
             print(e)
             print(f'Current file: {file}')
-
-

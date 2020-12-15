@@ -5,6 +5,4 @@ RUN pip install -r /requirements.txt
 
 ADD . /
 
-CMD["pytest"]
-
 CMD ["python", "/main.py"]
