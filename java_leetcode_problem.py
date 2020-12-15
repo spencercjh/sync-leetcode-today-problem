@@ -50,7 +50,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class {self.title_without_space}Test {{
 
-  private {self.title_without_space} solution= new {self.title_without_space}();
+  private {self.title_without_space} solution = new {self.title_without_space}();
   
   @Test
   void {self.function_name}() {{
