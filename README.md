@@ -1,5 +1,7 @@
 # Sync LeetCode Today Problem
 
+![Lint and Test](https://github.com/spencercjh/sync-leetcode-today-problem/workflows/Lint%20and%20Test/badge.svg)
+
 Today Problem (official graphql operation name is Today Record) is a feature only at leetcode-cn.com
 
 ## Parameters
