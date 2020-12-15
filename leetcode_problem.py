@@ -66,7 +66,7 @@ class LeetCodeProblem(object):
     @staticmethod
     def get_one_language_code_snippets_from_question_data(language: str, _question_data: dict) -> str:
         for snippet in _question_data['codeSnippets']:
-            if snippet['lang'] == language:
+            if snippet['lang'].upper() == language.upper():
                 return snippet['code']
 
     def extract_function_name_from_signature(self):
@@ -74,71 +74,3 @@ class LeetCodeProblem(object):
 
     def extract_function_signature_from_snippet(self) -> str:
         raise NotImplementedError
-
-
-class JavaLeetCodeProblem(LeetCodeProblem):
-
-    def __init__(self, **kwargs) -> None:
-        super().__init__(**kwargs)
-
-    def extract_function_signature_from_snippet(self) -> str:
-        return self.code_snippet[self.code_snippet.index('\n'):self.code_snippet.rindex('\n')]
-
-    def extract_function_name_from_signature(self) -> str:
-        words = [words for words in self.function_signature.strip().split(' ') if words]
-        return words[2][:words[2].rindex('(')]
-
-    def setup_source_file(self) -> GitHubFile:
-        return GitHubFile(
-            f"src/main/java/{self.file_user}/problems/{self.title_without_space}.java",
-            f'{self.id}: {self.title_with_space}',
-            self.setup_java_source_file_content()
-        )
-
-    def setup_java_source_file_content(self):
-        return f"""package {self.file_user}.problems;
-           
-import javax.inject.Singleton;
-            
-/**
- * https://leetcode-cn.com/problems/{self.title_slug}/
- *
- * @author {self.file_user}
- */
-@Singleton
-public class {self.title_without_space}{{
-{self.function_signature}
-
-}}
-"""
-
-    def setup_test_file(self):
-        return GitHubFile(
-            f"src/test/java/{self.file_user}/problems/{self.title_without_space}Test.java",
-            f'{self.id}: {self.title_with_space} (Test)',
-            self.setup_java_test_file_content()
-        )
-
-    def setup_java_test_file_content(self):
-        return f"""package {self.file_user}.problems;
-
-import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
-import org.junit.jupiter.api.Test;
-
-import javax.inject.Inject;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-@MicronautTest
-class {self.title_without_space}Test {{
-
-  @Inject
-  private {self.title_without_space} solution;
-  
-  @Test
-  void {self.function_name}() {{
-    
-  }}
-
-}}
-"""

@@ -10,3 +10,6 @@ gen
 
 venv
 action.yml
+README.md
+LICENSE
+.pytest_cache

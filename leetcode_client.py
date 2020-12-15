@@ -1,6 +1,6 @@
 import requests
 
-from leetcode_problem import JavaLeetCodeProblem
+from java_leetcode_problem import JavaLeetCodeProblem
 
 # Add language-Class mapping here
 supported_language: dict = {'JAVA': JavaLeetCodeProblem}

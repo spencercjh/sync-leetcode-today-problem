@@ -9,7 +9,7 @@ from leetcode_problem import LeetCodeProblem
 GITHUB_TOKEN = os.getenv("INPUT_GITHUB_TOKEN")
 REPOSITORY = os.getenv("INPUT_REPOSITORY")
 BRANCH = os.getenv("INPUT_BRANCH")
-USER = os.getenv("INPUT_USER", 'bot')
+USER = os.getenv("INPUT_USER", 'test')
 LANGUAGE = os.getenv("INPUT_LANGUAGE", 'Java')
 
 lc_client = LeetCodeClient(LANGUAGE, USER)

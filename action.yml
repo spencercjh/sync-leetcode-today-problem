@@ -1,7 +1,7 @@
 # action.yml
-name: Sync LeetCode Today Record
+name: Sync LeetCode Today Problem
 author: spenecercjh
-description: Sync LeetCode Today Record
+description: Sync LeetCode Today Problem
 inputs:
   GITHUB_TOKEN:
     description: "GitHub access token with Repo scope"
@@ -20,7 +20,7 @@ inputs:
     default: ${{ github.actor }}
     required: true
   LANGUAGE:
-    description: "The language you use"
+    description: "The language you use in the repo"
     default: Java
     required: false
 runs:
