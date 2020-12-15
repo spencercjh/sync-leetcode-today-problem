@@ -45,7 +45,9 @@ jobs:
           language: Java
 ```
 
-## How to extend more languages
+## Welecome issues and PR to extend more languages
+
+**If you think it is valuable and meaningful to solve LeetCode Today Problem(record or question, whatever you like to name it in English) with VCS, let Github to record your daily use of LeetCode, welecome to contribute this little project.**
 
 The language format is **upper-camel-case**. Here are the examples: `Cpp`,`JavaScript`,`Php`,`Kotlin`. The language name in the python file name has to obey python style: **snake-case** , for example: `cpp_leetcode_problem.py`.
 
