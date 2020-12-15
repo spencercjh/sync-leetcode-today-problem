@@ -1,4 +1,4 @@
-name: Pytest
+name: Lint and Test
 
 on: [push]
 
@@ -16,7 +16,9 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        pip install pylint
+    - name: Flake8
+      run: |
+        flake8    
     - name: Pytest
       run: |
         pytest
