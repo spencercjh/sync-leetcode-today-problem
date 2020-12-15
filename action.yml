@@ -1,0 +1,31 @@
+# action.yml
+name: Sync LeetCode Today Record
+author: spenecercjh
+description: Sync LeetCode Today Record
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub access token with Repo scope"
+    required: true
+    default: ${{ github.token }}
+  REPOSITORY:
+    description: "Push files to this repo"
+    default: ${{ github.repository }}
+    required: true
+  BRANCH:
+    description: "Push files to this branch"
+    default: ${{ github.ref	}}
+    required: true
+  USER:
+    description: "@author in the file"
+    default: ${{ github.actor }}
+    required: true
+  LANGUAGE:
+    description: "The language you use"
+    default: Java
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: info
+  color: blue
