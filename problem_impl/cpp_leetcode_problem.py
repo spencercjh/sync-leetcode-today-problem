@@ -2,8 +2,6 @@ from leetcode_problem import LeetCodeProblem, GitHubFile, NameUtil
 
 
 class CppLeetCodeProblem(LeetCodeProblem):
-    def __init__(self, **kwargs) -> None:
-        super().__init__(**kwargs)
 
     def extract_function_signature_from_snippet(self) -> str:
         signature_identifier = 'public:\n'
