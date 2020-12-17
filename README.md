@@ -4,6 +4,10 @@
 
 Today Problem (official graphql operation name is Today Record) is a feature only at leetcode-cn.com.
 
+Are you missing the smart IDE during your coding on the web? Do you think the solution is more important than the form of coding such as whiteboard-coding?
+
+**Try this Github Action!**
+
 This action will create a source file and a test file(optional) of the problem. Currently the file path is not configurable. (A configurable path for file generation would greatly increase the flexibility of this Action. I will solve it in the near future.) For example, in Cpp and Python, files are added to the root directory, the Pytest files are created in test directory. It takes you a little time to get more info from the example.
 
 This action can be used not only in empty repo, but also in your existing leetcode solutions repository. 
