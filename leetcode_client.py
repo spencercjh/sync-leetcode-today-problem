@@ -1,9 +1,13 @@
 import requests
 
-from java_leetcode_problem import JavaLeetCodeProblem
+from problem_impl.cpp_leetcode_problem import CppLeetCodeProblem
+from problem_impl.java_leetcode_problem import JavaLeetCodeProblem
 
-# Add language-Class mapping here
-supported_language: dict = {'JAVA': JavaLeetCodeProblem}
+# ADD LANGUAGE-CLASS MAPPING HERE
+supported_language: dict = {
+    'JAVA': JavaLeetCodeProblem,
+    'CPP': CppLeetCodeProblem
+}
 
 
 class LeetCodeClient(object):

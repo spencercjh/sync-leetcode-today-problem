@@ -28,7 +28,7 @@ class JavaLeetCodeProblem(LeetCodeProblem):
  *
  * @author {self.file_user}
  */
-public class {self.title_without_space}{{
+public class {self.title_without_space} {{
 {self.function_signature}
 
 }}

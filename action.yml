@@ -23,9 +23,13 @@ inputs:
     description: "The language you use in the repo"
     default: Java
     required: false
+  NEED_TEST:
+    description: "Whether need test files"
+    default: "False"
+    required: false
 runs:
   using: docker
   image: Dockerfile
 branding:
-  icon: info
-  color: blue
+  icon: sunrise
+  color: orange

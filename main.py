@@ -11,6 +11,7 @@ REPOSITORY = os.getenv("INPUT_REPOSITORY")
 BRANCH = os.getenv("INPUT_BRANCH")
 USER = os.getenv("INPUT_USER", 'test')
 LANGUAGE = os.getenv("INPUT_LANGUAGE", 'Java')
+NEED_TEST = bool(os.getenv("INPUT_NEED_TEST", 'False'))
 
 lc_client = LeetCodeClient(LANGUAGE, USER)
 
@@ -54,9 +55,13 @@ if __name__ == '__main__':
 
     question_of_today = get_question_of_today()
 
+    file_list = [question_of_today.setup_source_file()]
+    if NEED_TEST:
+        file_list.append(question_of_today.setup_test_file())
+
     print("Checking existence======================================================================")
     to_create_files = []
-    for file in [question_of_today.setup_source_file(), question_of_today.setup_test_file()]:
+    for file in file_list:
         try:
             repo.get_contents(file.path, BRANCH)
             print(f"{file.path} exists")

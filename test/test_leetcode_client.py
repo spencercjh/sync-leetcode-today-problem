@@ -1,16 +1,7 @@
 from leetcode_client import LeetCodeClient
-from leetcode_problem import NameUtil
 
 LANGUAGE = 'Java'
 client = LeetCodeClient(LANGUAGE, 'spencercjh')
-
-
-def test_kebab_case_to_camel_sentence():
-    assert 'Two Sum' == NameUtil.kebab_case_to_camel_sentence('two-sum', ' ')
-    assert '' == NameUtil.kebab_case_to_camel_sentence('', '')
-    # noinspection PyTypeChecker
-    assert '' == NameUtil.kebab_case_to_camel_sentence(None, '')
-    assert 'TwoSum' == NameUtil.kebab_case_to_camel_sentence('two-sum', '')
 
 
 def test_today_record():

@@ -40,14 +40,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync LeetCode Today Problem
-        uses: spencercjh/sync-leetcode-today-problem@0.0.1
+        uses: spencercjh/sync-leetcode-today-problem@<latest version>
         with:
           language: Java
+          need_test: True
+
 ```
 
-## Welecome issues and PR to extend more languages
+## Welcome issues and PR to extend more languages
 
-**If you think it is valuable and meaningful to solve LeetCode Today Problem(record or question, whatever you like to name it in English) with VCS, let Github to record your daily use of LeetCode, welecome to contribute this little project.**
+**If you think it is valuable and meaningful to solve LeetCode Today Problem(record or question, whatever you like to name it in English) with VCS, let Github to record your daily use of LeetCode, welcome to contribute this little project.**
 
 The language format is **upper-camel-case**. Here are the examples: `Cpp`,`JavaScript`,`Php`,`Kotlin`. The language name in the python file name has to obey python style: **snake-case** , for example: `cpp_leetcode_problem.py`.
 
