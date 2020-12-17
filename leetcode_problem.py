@@ -26,10 +26,19 @@ class NameUtil(object):
         """
         kebab case to camel case with a specific separator
         :param kebab_str: example: two-sum
-        :param separator: separator
-        :return: example: Two Sum
+        :param separator: separator like space or None
+        :return: example: Two Sum | TwoSum | Two-Sum
         """
         return separator.join(word.title() for word in kebab_str.split("-")) if kebab_str else ''
+
+    @staticmethod
+    def kebab_case_to_snake_sentence(kebab_str: str) -> str:
+        """
+        kebab case to camel case with a specific separator
+        :param kebab_str: example: two-sum
+        :return: example: two_sum
+        """
+        return '_'.join(word for word in kebab_str.split("-")) if kebab_str else ''
 
 
 class LeetCodeProblem(object):
@@ -66,7 +75,7 @@ class LeetCodeProblem(object):
     @staticmethod
     def get_one_language_code_snippets_from_question_data(language: str, _question_data: dict) -> str:
         for snippet in _question_data['codeSnippets']:
-            if snippet['lang'].upper() == language.upper():
+            if snippet['lang'].upper() == language.upper() or snippet['langSlug'].upper() == language.upper():
                 return snippet['code']
 
     def extract_function_name_from_signature(self):
