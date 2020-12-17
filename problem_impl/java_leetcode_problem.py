@@ -3,9 +3,6 @@ from leetcode_problem import LeetCodeProblem, GitHubFile
 
 class JavaLeetCodeProblem(LeetCodeProblem):
 
-    def __init__(self, **kwargs) -> None:
-        super().__init__(**kwargs)
-
     def extract_function_signature_from_snippet(self) -> str:
         return self.code_snippet[self.code_snippet.index('\n'):self.code_snippet.rindex('\n')]
 

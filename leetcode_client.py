@@ -2,11 +2,13 @@ import requests
 
 from problem_impl.cpp_leetcode_problem import CppLeetCodeProblem
 from problem_impl.java_leetcode_problem import JavaLeetCodeProblem
-
 # ADD LANGUAGE-CLASS MAPPING HERE
+from problem_impl.python_three_leetcode_problem import PythonThreeLeetCodeProblem
+
 supported_language: dict = {
     'JAVA': JavaLeetCodeProblem,
-    'CPP': CppLeetCodeProblem
+    'CPP': CppLeetCodeProblem,
+    'PYTHON3': PythonThreeLeetCodeProblem
 }
 
 
