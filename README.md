@@ -16,14 +16,14 @@ Today Problem (official graphql operation name is Today Record) is a feature onl
 ### Required
 
 - language: which language of code snippet you want to generate.
+- need_test: whether need test file
 
 ## Supported languages right now
 
-- Java
+- Java:[example](https://github.com/spencercjh/sync-leetcode-today-problem-java-example)
+- Cpp:[example](https://github.com/spencercjh/sync-leetcode-today-problem-cpp-example) (not support test file now)
 
 ## Workflow example
-
-Or you can go to the [example repo](https://github.com/spencercjh/sync-leetcode-today-problem-example) for more details.
 
 ```yaml
 name: Sync LeetCode Today Problem
