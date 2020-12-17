@@ -7,8 +7,9 @@ class CppLeetCodeProblem(LeetCodeProblem):
 
     def extract_function_signature_from_snippet(self) -> str:
         signature_identifier = 'public:\n'
-        return self.code_snippet[
-               self.code_snippet.index(signature_identifier) + len(signature_identifier):self.code_snippet.rindex('\n')]
+        begin = self.code_snippet.index(signature_identifier) + len(signature_identifier)
+        end = self.code_snippet.rindex('\n')
+        return self.code_snippet[begin:end]
 
     def extract_function_name_from_signature(self):
         words = [words for words in self.function_signature.strip().split(' ') if words]
