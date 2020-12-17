@@ -22,7 +22,7 @@ inputs:
   LANGUAGE:
     description: "The language you use in the repo"
     default: Java
-    required: false
+    required: true
   NEED_TEST:
     description: "Whether need test files"
     default: "False"

@@ -1,5 +1,6 @@
 import os
 import sys
+from distutils.util import strtobool
 
 from github import Github, GithubException
 
@@ -10,8 +11,8 @@ GITHUB_TOKEN = os.getenv("INPUT_GITHUB_TOKEN")
 REPOSITORY = os.getenv("INPUT_REPOSITORY")
 BRANCH = os.getenv("INPUT_BRANCH")
 USER = os.getenv("INPUT_USER", 'test')
-LANGUAGE = os.getenv("INPUT_LANGUAGE", 'Java')
-NEED_TEST = bool(os.getenv("INPUT_NEED_TEST", 'False'))
+LANGUAGE = os.getenv("INPUT_LANGUAGE")
+NEED_TEST = strtobool(os.getenv("INPUT_NEED_TEST", 'False'))
 
 lc_client = LeetCodeClient(LANGUAGE, USER)
 
