@@ -4,7 +4,8 @@ from leetcode_problem import LeetCodeProblem, GitHubFile, NameUtil
 class PythonThreeLeetCodeProblem(LeetCodeProblem):
 
     def extract_function_signature_from_snippet(self) -> str:
-        return self.code_snippet[self.code_snippet.index('def'):]
+        class_end = self.code_snippet.index('class Solution:') + len('class Solution:')
+        return self.code_snippet[class_end:]
 
     def extract_function_name_from_signature(self):
         words = [words for words in self.function_signature.strip().split(' ') if words]

@@ -4,7 +4,8 @@ from leetcode_problem import LeetCodeProblem, GitHubFile
 class JavaLeetCodeProblem(LeetCodeProblem):
 
     def extract_function_signature_from_snippet(self) -> str:
-        return self.code_snippet[self.code_snippet.index('\n'):self.code_snippet.rindex('\n')]
+        open_brace = self.code_snippet.index('class Solution {') + len('class Solution {')
+        return self.code_snippet[open_brace:self.code_snippet.rindex('\n')]
 
     def extract_function_name_from_signature(self) -> str:
         words = [words for words in self.function_signature.strip().split(' ') if words]
