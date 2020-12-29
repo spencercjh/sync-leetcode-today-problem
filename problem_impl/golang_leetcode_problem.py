@@ -22,7 +22,9 @@ class GolangLeetCodeProblem(LeetCodeProblem):
         pass
 
     def setup_golang_source_file_content(self):
-        return f"""// https://leetcode-cn.com/problems/{self.title_slug}
+        return f"""package leetcode
+
+// https://leetcode-cn.com/problems/{self.title_slug}
 {self.function_signature}
 }}
 """
