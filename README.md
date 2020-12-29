@@ -15,9 +15,9 @@ This action can be used not only in empty repo, but also in your existing leetco
 ## Supported languages right now
 
 - [x] Java:[example](https://github.com/spencercjh/sync-leetcode-today-problem-java-example)
-- [x] Cpp:[example](https://github.com/spencercjh/sync-leetcode-today-problem-cpp-example) (not support test file now)
+- [x] Cpp:[example](https://github.com/spencercjh/sync-leetcode-today-problem-cpp-example) (not support test now)
 - [x] Python3:[example](https://github.com/spencercjh/sync-leetcode-today-problem-python3-example)
-- [ ] Golang:[example](https://github.com/spencercjh/sync-leetcode-today-problem-golang-example) (not support test file now)
+- [x] Golang:[example](https://github.com/spencercjh/sync-leetcode-today-problem-golang-example) (not support test now)
 - [ ] TBD...
 
 ## Workflow example
