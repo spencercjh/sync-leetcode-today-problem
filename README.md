@@ -8,15 +8,17 @@ Are you missing the smart IDE during your coding on the web? Do you think the so
 
 **Try this Github Action!**
 
-This action will create a source file and a test file(optional) of the problem. Currently the file path is not configurable. (A configurable path for file generation would greatly increase the flexibility of this Action. I will solve it in the near future.) For example, in Cpp and Python, files are added to the root directory, the Pytest files are created in test directory. It takes you a little time to get more info from the example.
+This action will create a source file and a test file(optional) of the problem. Currently, the file path is not configurable. (A configurable path for file generation would greatly increase the flexibility of this Action. I will solve it in the near future.) For example, in Cpp and Python, files are added to the root directory, the Pytest files are created in test directory. It takes you a little time to get more info from the example.
 
 This action can be used not only in empty repo, but also in your existing leetcode solutions repository. 
 
 ## Supported languages right now
 
-- Java:[example](https://github.com/spencercjh/sync-leetcode-today-problem-java-example)
-- Cpp:[example](https://github.com/spencercjh/sync-leetcode-today-problem-cpp-example) (not support test file now)
-- Python3:[example](https://github.com/spencercjh/sync-leetcode-today-problem-python3-example)
+- [x] Java:[example](https://github.com/spencercjh/sync-leetcode-today-problem-java-example)
+- [x] Cpp:[example](https://github.com/spencercjh/sync-leetcode-today-problem-cpp-example) (not support test file now)
+- [x] Python3:[example](https://github.com/spencercjh/sync-leetcode-today-problem-python3-example)
+- [ ] Golang:[example](https://github.com/spencercjh/sync-leetcode-today-problem-golang-example) (not support test file now)
+- [ ] TBD...
 
 ## Workflow example
 
