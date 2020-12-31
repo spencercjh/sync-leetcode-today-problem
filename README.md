@@ -44,6 +44,26 @@ jobs:
 
 ```
 
+## How to use
+
+- Prepare a repository
+
+![repository](./asserts/repository.png)
+
+- Create an Action with the example code
+
+![goto_action](./asserts/goto_action.png)
+
+![create_action](./asserts/create_action.png)
+
+- Run it manually now
+
+![run_manually](./asserts/run_manually.png)
+
+- See what happened in your repo
+
+- See what happened in your repo tomorrow
+
 ## Parameters
 
 ### Optional
