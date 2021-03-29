@@ -1,5 +1,6 @@
 from leetcode_client import LeetCodeClient
 from leetcode_problem import LeetCodeProblem
+from test.test_leetcode_problem import _common_test
 
 LANGUAGE = 'Java'
 client = LeetCodeClient(LANGUAGE, 'spencercjh')
@@ -33,23 +34,3 @@ def test_whole_scenario():
         LeetCodeProblem.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
 
     _common_test(question_of_today)
-
-
-def _common_test(question_of_today):
-    assert question_of_today.id
-    assert question_of_today.title_slug
-    assert question_of_today.title_with_space
-    assert question_of_today.title_without_space
-    assert question_of_today.file_user
-    assert question_of_today.code_snippet
-    print(question_of_today.to_json())
-    source_file = question_of_today.setup_source_file()
-    assert source_file.path
-    assert source_file.message
-    assert source_file.content
-    assert 'None' not in source_file.content
-    assert 'Solution' not in source_file.content
-    assert 'None' not in source_file.message
-    assert 'None' not in source_file.path
-    print(source_file.to_json())
-    print(source_file.content)
