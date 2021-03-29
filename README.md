@@ -84,9 +84,4 @@ jobs:
 
 The language format is **upper-camel-case**. Here are the examples: `Cpp`,`JavaScript`,`Php`,`Kotlin`. The language name in the python file name has to obey python style: **snake-case** , for example: `cpp_leetcode_problem.py`.
 
-- Add a `.py` file named `<language>_leetcode_problem.py`.For example: `cpp_leetcode_problem.py`.
-- Override following methods: `extract_function_signature_from_snippet(self)`, `extract_function_name_from_signature(self)`, `setup_source_file(self)` and `setup_test_file(self)`.
-- Add a `language-Class` mapping to the `supported_language:dict` at the top of the  `leetcode_client.py` like `'JAVA': JavaLeetCodeProblem`.
-- Add some test to a new test file named `test_<language>_leetcode_problem.py`, and pay attention to the actual output
- of the generated codes.
-- Update the associated content in `README.md`.
+Just override class `LeetCodeProblem` and sync your language's problems!
