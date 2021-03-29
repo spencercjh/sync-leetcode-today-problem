@@ -56,20 +56,18 @@ class LeetCodeProblem(object):
         self.code_snippet = ''
         self.function_signature = ''
         self.function_name = ''
+        self.class_docs = ''
 
     def to_json(self):
         return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
     def set_code_snippet(self, _code_snippet: str):
         self.code_snippet = _code_snippet
-        self.function_signature = self.extract_function_signature_from_snippet()
-        self.function_name = self.extract_function_name_from_signature()
+        self.modify_the_class_name_in_snippet()
+        self.class_docs = self.extract_class_docs()
         return self
 
     def setup_source_file(self) -> GitHubFile:
-        raise NotImplementedError
-
-    def setup_test_file(self) -> GitHubFile:
         raise NotImplementedError
 
     @staticmethod
@@ -78,8 +76,12 @@ class LeetCodeProblem(object):
             if snippet['lang'].upper() == language.upper() or snippet['langSlug'].upper() == language.upper():
                 return snippet['code']
 
-    def extract_function_name_from_signature(self):
+    def extract_class_docs(self):
+        """
+        extract class docs from self.code_snippet and remove them from source code
+        :return:
+        """
         raise NotImplementedError
 
-    def extract_function_signature_from_snippet(self) -> str:
-        raise NotImplementedError
+    def modify_the_class_name_in_snippet(self):
+        self.code_snippet = self.code_snippet.replace('Solution', self.title_without_space)
