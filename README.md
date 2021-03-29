@@ -8,16 +8,16 @@ Are you missing the smart IDE during your coding on the web? Do you think the so
 
 **Try this Github Action!**
 
-This action will create a source file and a test file(optional) of the problem. Currently, the file path is not configurable. (A configurable path for file generation would greatly increase the flexibility of this Action. I will solve it in the near future.) For example, in Cpp and Python, files are added to the root directory, the Pytest files are created in test directory. It takes you a little time to get more info from the example.
+This action will create a source file of the problem. Currently, the file path is not configurable. (A configurable path for file generation would greatly increase the flexibility of this Action. I will solve it in the near future) It takes you a little time to get more info from the example.
 
 This action can be used not only in empty repo, but also in your existing leetcode solutions repository. 
 
 ## Supported languages right now
 
 - [x] Java:[example](https://github.com/spencercjh/sync-leetcode-today-problem-java-example)
-- [x] Cpp:[example](https://github.com/spencercjh/sync-leetcode-today-problem-cpp-example) (not support test now)
+- [x] Cpp:[example](https://github.com/spencercjh/sync-leetcode-today-problem-cpp-example)
 - [x] Python3:[example](https://github.com/spencercjh/sync-leetcode-today-problem-python3-example)
-- [x] Golang:[example](https://github.com/spencercjh/sync-leetcode-today-problem-golang-example) (not support test now)
+- [x] Golang:[example](https://github.com/spencercjh/sync-leetcode-today-problem-golang-example)
 - [ ] TBD...
 
 ## Workflow example
@@ -40,8 +40,6 @@ jobs:
         uses: spencercjh/sync-leetcode-today-problem@<latest version>
         with:
           language: Java
-          need_test: True
-
 ```
 
 ## How to use
@@ -76,7 +74,6 @@ jobs:
 ### Required
 
 - language: which language of code snippet you want to generate.
-- need_test: whether need test file
 
 ## Welcome issues and PR to extend more languages
 

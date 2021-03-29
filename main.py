@@ -57,8 +57,6 @@ if __name__ == '__main__':
     question_of_today = get_question_of_today()
 
     file_list = [question_of_today.setup_source_file()]
-    if NEED_TEST:
-        file_list.append(question_of_today.setup_test_file())
 
     print("Checking existence======================================================================")
     to_create_files = []
