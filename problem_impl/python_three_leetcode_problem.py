@@ -15,4 +15,4 @@ class PythonThreeLeetCodeProblem(LeetCodeProblem):
         )
 
     def setup_python_three_source_file_content(self):
-        return f'# https://leetcode-cn.com/problems/{self.title_slug}/\n{self.code_snippet}'
+        return f'# https://leetcode-cn.com/problems/{self.title_slug}/\n{self.code_snippet}\n'

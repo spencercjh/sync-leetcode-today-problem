@@ -23,4 +23,4 @@ class JavaLeetCodeProblem(LeetCodeProblem):
 
     def setup_java_source_file_content(self):
 
-        return f'package {self.file_user}.problems;\n\n{self.class_docs}\n{self.code_snippet}'
+        return f'package {self.file_user}.problems;\n\n{self.class_docs}\n{self.code_snippet}\n'

@@ -21,4 +21,4 @@ class CppLeetCodeProblem(LeetCodeProblem):
         )
 
     def setup_cpp_source_file_content(self):
-        return f'package leetcode\n\n{self.class_docs}\n{self.code_snippet}'
+        return f'package leetcode\n\n{self.class_docs}\n{self.code_snippet}\n'

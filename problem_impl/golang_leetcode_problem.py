@@ -25,4 +25,4 @@ class GolangLeetCodeProblem(LeetCodeProblem):
         )
 
     def setup_golang_source_file_content(self):
-        return f'package leetcode\n\n{self.class_docs}\n{self.code_snippet}'
+        return f'package leetcode\n\n{self.class_docs}\n{self.code_snippet}\n'
